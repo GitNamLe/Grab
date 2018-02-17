@@ -87,12 +87,10 @@ export class HomePage {
     })
 
     .done((data) => {
-      loading.dismiss();
       this.navCtrl.push(OcrRenderPage, {data: data.regions[0]});
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
-        loading.dismiss();
         // Display error message.
         var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
         errorString += (jqXHR.responseText === "") ? "" : (jQuery.parseJSON(jqXHR.responseText).message) ? 
