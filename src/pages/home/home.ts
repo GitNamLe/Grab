@@ -96,12 +96,12 @@ export class HomePage {
         errorString += (jqXHR.responseText === "") ? "" : (jQuery.parseJSON(jqXHR.responseText).message) ? 
             jQuery.parseJSON(jqXHR.responseText).message : jQuery.parseJSON(jqXHR.responseText).error.message;
 
-        const alert = this.alertCtrl.create({
+        /* const alert = this.alertCtrl.create({
           title: 'Request Failed',
           message: errorString,
           buttons: ['ok']
         });
-        alert.present();
+        alert.present(); */
 
     });
 };
