@@ -21,7 +21,7 @@ export class HomePage {
               private imageService: ImageService,
               private loadingCtrl: LoadingController,
               private alertCtrl: AlertController,
-              public nav: NavController) {
+              public navCtrl: NavController) {
   }
 
   //not yet until we have url => base64 => blob and then we can test for cordova on ionic view
@@ -86,7 +86,7 @@ export class HomePage {
     })
 
     .done((data) => {
-      this.nav.push(OcrRenderPage, {data: data.regions[0]});
+      this.navCtrl.push(OcrRenderPage, {data: data.regions[0]});
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
