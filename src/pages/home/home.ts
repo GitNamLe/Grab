@@ -20,7 +20,7 @@ export class HomePage {
   resData: any;
   boysWidth: number;
   boysHeight: number;
-  results: string;
+  results: number;
   constructor(private camera: Camera,
               private imageService: ImageService,
               private loadingCtrl: LoadingController,
@@ -95,7 +95,7 @@ export class HomePage {
 
     .fail(function(jqXHR, textStatus, errorThrown) {
         // Display error message.
-        this.results = "yafailed"
+        this.results = 1;
 
         var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
         errorString += (jqXHR.responseText === "") ? "" : (jQuery.parseJSON(jqXHR.responseText).message) ? 
@@ -112,7 +112,7 @@ export class HomePage {
     let img = document.getElementById('inputImage'); 
     this.boysWidth = img.clientWidth;
     this.boysHeight = img.clientHeight;
-    this.results = "yaboi"
+    this.results = 2
 
   };
 
