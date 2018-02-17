@@ -1,14 +1,49 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar *navbar>
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header>  
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="home">
+  <ion-card>
+    <ion-card-content>
+<!--       <h1>Optical Character Recognition (OCR):</h1>-->      
+    <button ion-button primary (click)="takePicture()">Take a Picture And Read Text</button>
+
+    <br><br>
+    <!--
+    Latest Picture:
+    <img [src]="base64Image" *ngIf="base64Image" width="400" />
+
+    <div id="wrapper" style="width:1020px; display:table;">
+        <div id="jsonOutput" style="width:600px; display:table-cell;">
+            Response:
+            <br><br>
+            <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px;"></textarea>
+            <textarea id="errorTextArea" class="UIInput" style="width:580px; height:400px;">{ }}</textarea>
+
+        </div>
+    </div> -->
+    <h1>Optical Character Recognition (OCR):</h1>
+    <br><br>
+<!--Image to read: <input type="text" [(ngModel)]="sourceImageUrl" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Atomist_quote_from_Democritus.png/338px-Atomist_quote_from_Democritus.png" /> -->
+   <button ion-button primary (click)="processImage()">Read image</button>
+
+    Source image:
+    <br><br>
+    <img crossOrigin="Anonymous" id="srcImg" [src]="base64Image" *ngIf="base64Image" width="400" />
+
+    <br><br>
+    
+    <div id="wrapper" style="width:1020px; display:table;">
+        <div id="jsonOutput" style="width:600px; display:table-cell;">
+            Response:
+            <br><br>
+            <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px;"></textarea>
+        </div>
+    </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
