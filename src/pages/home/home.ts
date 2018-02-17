@@ -51,7 +51,11 @@ export class HomePage {
   };
 
   processImage() {
-    // **********************************************
+    const loading = this.loadingCtrl.create({
+      content: 'sending request'
+    });
+    loading.present();
+/*     // **********************************************
     // *** Update or verify the following values. ***
     // **********************************************
 
@@ -111,13 +115,13 @@ export class HomePage {
             jQuery.parseJSON(jqXHR.responseText).message : jQuery.parseJSON(jqXHR.responseText).error.message;
 
         const alert = this.alertCtrl.create({
-          title: 'Request Failed!',
+          title: 'Request Failed',
           message: errorString,
           buttons: ['ok']
         });
         alert.present();
 
     });
-};
+}; */
 
 }
