@@ -86,6 +86,7 @@ export class HomePage {
     })
 
     .done((data) => {
+      loading.dismiss();
       this.navCtrl.push(OcrRenderPage, {data: data.regions[0]});
     })
 
