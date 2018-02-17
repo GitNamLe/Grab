@@ -7,6 +7,7 @@ import { ImageService } from '../../services/ocr.service';
 import { LoadingController, AlertController } from 'ionic-angular';
 import { NavController } from 'ionic-angular';
 import { OcrRenderPage } from '../ocr-render/ocr-render';
+import { Loading } from 'ionic-angular/components/loading/loading';
 
 
 
@@ -55,7 +56,7 @@ export class HomePage {
   };
 
   processImage() {
-    const loading = this.loadingCtrl.create({
+    let loading = this.loadingCtrl.create({
       content: 'sending request'
     });
     loading.present();
@@ -88,9 +89,11 @@ export class HomePage {
 
     .done((data) => {
       this.navCtrl.push(OcrRenderPage, {data: data.regions[0]});
+      loading.dismiss();
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
+        loading.dismiss();
         // Display error message.
         var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
         errorString += (jqXHR.responseText === "") ? "" : (jQuery.parseJSON(jqXHR.responseText).message) ? 
