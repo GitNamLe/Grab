@@ -18,6 +18,8 @@ export class HomePage {
   public base64Image: string;
   blob: any;
   resData: any;
+  boysWidth: number;
+  boysHeight: number;
   constructor(private camera: Camera,
               private imageService: ImageService,
               private loadingCtrl: LoadingController,
@@ -32,25 +34,28 @@ export class HomePage {
     });
     loading.present();
     this.camera.getPicture({
-        destinationType: this.camera.DestinationType.DATA_URL,
-        targetWidth: 200,
-        targetHeight: 200
-        }).then((imageData) => {
-          loading.dismiss();
-          // imageData is a base64 encoded string
-          this.base64Image = "data:image/jpeg;base64," + imageData;
-        }, (err) => {
-          loading.dismiss();
-          const alert = this.alertCtrl.create({
-            title: 'Signin Failed',
-            message: err,
-            buttons: ['ok']
-          });
-          alert.present();
+      destinationType: this.camera.DestinationType.DATA_URL,
+      targetWidth: 200,
+      targetHeight: 200
+      }).then((imageData) => {
+        loading.dismiss();
+        // imageData is a base64 encoded string
+        this.base64Image = "data:image/jpeg;base64," + imageData;
+      }, (err) => {
+        loading.dismiss();
+        const alert = this.alertCtrl.create({
+          title: 'Signin Failed',
+          message: err,
+          buttons: ['ok']
         });
+        alert.present();
+      });
 
-/*      let blob = this.imageService.makeblob(this.base64Image); 
-        this.processImage(blob) */
+
+    let img = document.getElementById('inputImage'); 
+    this.boysWidth = img.clientWidth;
+    this.boysHeight = img.clientHeight;
+
         this.blob = this.imageService.makeBlob(this.base64Image);
   };
 

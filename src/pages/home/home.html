@@ -33,7 +33,8 @@
     <button ion-button secondary (click)="viewThisBoy()">viewthisboi</button>
     Source image:
     <br><br>
-    <img crossOrigin="Anonymous" id="srcImg" [src]="base64Image" *ngIf="base64Image" width="400" />
+    <p>{{ boysWidth }}and{{ boysHeight }}</p>
+    <img crossOrigin="Anonymous" id="inputImage" [src]="base64Image" *ngIf="base64Image" width="400" />
 
     <br><br>
     </ion-card-content>
