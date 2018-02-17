@@ -91,10 +91,6 @@ export class HomePage {
       /* $("#responseTextArea").val(JSON.stringify(data, null, 2)); */
     })
 
-    .done((data) => {
-      this.nav.push(OcrRenderPage, {data: data.regions[0]});
-    })
-
     .fail(function(jqXHR, textStatus, errorThrown) {
         // Display error message.
         var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
