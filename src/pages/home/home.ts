@@ -55,7 +55,7 @@ export class HomePage {
         this.blob = this.imageService.makeBlob(this.base64Image);
   };
 
-  processImage() {
+  processImage = () => {
     let loading = this.loadingCtrl.create({
       content: 'sending request'
     });
