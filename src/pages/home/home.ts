@@ -58,6 +58,11 @@ export class HomePage {
   }
 
   processImage = () => {
+    let loading = this.loadingCtrl.create({
+      content: 'sending request'
+    });
+    loading.present();
+
     var subscriptionKey = "6e1e785baae34fd3a857005712ab7810";
     var uriBase = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/ocr";
 
@@ -86,13 +91,17 @@ export class HomePage {
 
     .done((data) => {
       this.nav.push(OcrRenderPage, {data: data.regions[0]});
+      // Show formatted JSON on webpage.
+      /* $("#responseTextArea").val(JSON.stringify(data, null, 2)); */
     })
 
     .done((data) => {
       this.nav.push(OcrRenderPage, {data: data.regions[0]});
+      loading.dismiss();
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
+        loading.dismiss();
         // Display error message.
         var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
         errorString += (jqXHR.responseText === "") ? "" : (jQuery.parseJSON(jqXHR.responseText).message) ? 
