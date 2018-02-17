@@ -8,11 +8,13 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Camera } from '@ionic-native/camera';
 import { ImageService } from '../services/ocr.service';
+import { OcrRenderPage } from '../pages/ocr-render/ocr-render';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    OcrRenderPage
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,8 @@ import { ImageService } from '../services/ocr.service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    OcrRenderPage
   ],
   providers: [
     StatusBar,

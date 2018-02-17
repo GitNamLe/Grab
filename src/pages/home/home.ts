@@ -5,6 +5,8 @@ import * as $ from 'jquery'
 import * as jQuery from 'jquery';
 import { ImageService } from '../../services/ocr.service';
 import { LoadingController, AlertController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
+import { OcrRenderPage } from '../ocr-render/ocr-render';
 
 
 
@@ -18,7 +20,8 @@ export class HomePage {
   constructor(private camera: Camera,
               private imageService: ImageService,
               private loadingCtrl: LoadingController,
-              private alertCtrl: AlertController) {
+              private alertCtrl: AlertController,
+              public nav: NavController) {
   }
 
   //not yet until we have url => base64 => blob and then we can test for cordova on ionic view
@@ -29,8 +32,8 @@ export class HomePage {
     loading.present();
     this.camera.getPicture({
         destinationType: this.camera.DestinationType.DATA_URL,
-        targetWidth: 1000,
-        targetHeight: 1000
+        targetWidth: 200,
+        targetHeight: 200
         }).then((imageData) => {
           loading.dismiss();
           // imageData is a base64 encoded string
@@ -82,20 +85,8 @@ export class HomePage {
         processData: false
     })
 
-    .done(function(data) {
-
-        loading.dismiss();
-
-
-        let load = this.loadingCtrl.create({
-          content: data.regions[0].lines[0].words[1].text
-        });
-        load.present();
-
-        // Show formatted JSON on webpage.
-        
-        
-
+    .done((data) => {
+      this.nav.push(OcrRenderPage, {data: data.regions[0]});
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
