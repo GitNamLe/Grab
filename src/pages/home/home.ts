@@ -17,6 +17,7 @@ import { OcrRenderPage } from '../ocr-render/ocr-render';
 export class HomePage {
   public base64Image: string;
   blob: any;
+  resData: any;
   constructor(private camera: Camera,
               private imageService: ImageService,
               private loadingCtrl: LoadingController,
@@ -54,7 +55,7 @@ export class HomePage {
   };
 
   viewThisBoy(){
-    this.nav.push(OcrRenderPage);
+    this.nav.push(OcrRenderPage, {data: this.resData});
   }
 
   processImage = () => {
@@ -85,7 +86,7 @@ export class HomePage {
     })
 
     .done((data) => {
-      this.nav.push(OcrRenderPage, {data: data.regions[0]});
+      this.resData = data.regions[0].lines[0].words
       // Show formatted JSON on webpage.
       /* $("#responseTextArea").val(JSON.stringify(data, null, 2)); */
     })
