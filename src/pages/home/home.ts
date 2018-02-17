@@ -85,7 +85,14 @@ export class HomePage {
     .done(function(data) {
       loading.dismiss();
         // Show formatted JSON on webpage.
-        $("#responseTextArea").val(JSON.stringify(data, null, 2));
+      loading.dismiss();
+      // Show formatted JSON on webpage.
+      const alert = this.alertCtrl.create({
+        title: 'Request Failed',
+        message: data,
+        buttons: ['ok']
+      });
+      alert.present();
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
