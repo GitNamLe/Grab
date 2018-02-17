@@ -87,6 +87,7 @@ export class HomePage {
     })
 
     .done((data) => {
+      this.results = 2
       /* this.results = data.regions[0].lines[0].words[0].text; */
       this.resData = data.regions[0].lines[0].words;
       // Show formatted JSON on webpage.
@@ -112,7 +113,6 @@ export class HomePage {
     let img = document.getElementById('inputImage'); 
     this.boysWidth = img.clientWidth;
     this.boysHeight = img.clientHeight;
-    this.results = 2
 
   };
 
