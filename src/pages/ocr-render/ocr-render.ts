@@ -8,6 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class OcrRenderPage {
   data: any;
+  respond: string;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,) {
@@ -17,6 +18,9 @@ export class OcrRenderPage {
     /* this.recipe = this.navParams.get('recipe');
     this.index = this.navParams.get('index'); */
     this.data = this.navParams.get('data');
+    if(this.data){
+      this.respond = "we in";
+    }
   }
 
 }

@@ -86,7 +86,7 @@ export class HomePage {
     })
 
     .done((data) => {
-      this.resData = data.regions[0].lines[0].words
+      this.resData = data.regions[0].lines[0].words;
       // Show formatted JSON on webpage.
       /* $("#responseTextArea").val(JSON.stringify(data, null, 2)); */
     })
