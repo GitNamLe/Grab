@@ -51,11 +51,6 @@ export class HomePage {
         alert.present();
       });
 
-
-    let img = document.getElementById('inputImage'); 
-    this.boysWidth = img.clientWidth;
-    this.boysHeight = img.clientHeight;
-
         this.blob = this.imageService.makeBlob(this.base64Image);
   };
 
@@ -110,6 +105,9 @@ export class HomePage {
         alert.present(); */
 
     });
-};
+    let img = document.getElementById('inputImage'); 
+    this.boysWidth = img.clientWidth;
+    this.boysHeight = img.clientHeight;
+  };
 
 }
