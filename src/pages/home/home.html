@@ -30,7 +30,7 @@
     <br><br>
 <!--Image to read: <input type="text" [(ngModel)]="sourceImageUrl" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Atomist_quote_from_Democritus.png/338px-Atomist_quote_from_Democritus.png" /> -->
    <button ion-button primary (click)="processImage()">Read image</button>
-
+    <button ion-button danger (click)="viewThisBoy()"></button>
     Source image:
     <br><br>
     <img crossOrigin="Anonymous" id="srcImg" [src]="base64Image" *ngIf="base64Image" width="400" />
