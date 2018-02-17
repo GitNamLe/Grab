@@ -85,13 +85,9 @@ export class HomePage {
     })
 
     .done((data) => {
-      this.nav.push(OcrRenderPage, {data: data.regions[0]});
+      this.viewThisBoy();
       // Show formatted JSON on webpage.
       /* $("#responseTextArea").val(JSON.stringify(data, null, 2)); */
-    })
-
-    .done((data) => {
-      
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
