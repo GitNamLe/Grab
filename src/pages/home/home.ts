@@ -4,6 +4,8 @@ import { Camera } from '@ionic-native/camera';
 import * as $ from 'jquery'
 import * as jQuery from 'jquery';
 import { ImageService } from '../../services/ocr.service';
+import { LoadingController, AlertController } from 'ionic-angular';
+
 
 
 @Component({
@@ -12,22 +14,35 @@ import { ImageService } from '../../services/ocr.service';
 })
 export class HomePage {
   public base64Image: string;
-  cameraErr: string;
   blob: any;
-  constructor(private camera: Camera, private imageService: ImageService) {
+  constructor(private camera: Camera,
+              private imageService: ImageService,
+              private loadingCtrl: LoadingController,
+              private alertCtrl: AlertController) {
   }
 
   //not yet until we have url => base64 => blob and then we can test for cordova on ionic view
   takePicture(){
+    const loading = this.loadingCtrl.create({
+      content: 'Signing you in...'
+    });
+    loading.present();
     this.camera.getPicture({
         destinationType: this.camera.DestinationType.DATA_URL,
         targetWidth: 1000,
         targetHeight: 1000
         }).then((imageData) => {
+          loading.dismiss();
           // imageData is a base64 encoded string
           this.base64Image = "data:image/jpeg;base64," + imageData;
         }, (err) => {
-          this.cameraErr = err;
+          loading.dismiss
+          const alert = this.alertCtrl.create({
+            title: 'Signin Failed',
+            message: err,
+            buttons: ['ok']
+          });
+          alert.present();
         });
 
 /*      let blob = this.imageService.makeblob(this.base64Image); 

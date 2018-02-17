@@ -1,6 +1,6 @@
 {
   "name": "ocr-mobile",
-  "app_id": "",
+  "app_id": "5d2a4286",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
