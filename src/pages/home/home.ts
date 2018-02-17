@@ -36,8 +36,8 @@ export class HomePage {
     loading.present();
     this.camera.getPicture({
       destinationType: this.camera.DestinationType.DATA_URL,
-      targetWidth: 200,
-      targetHeight: 200
+      targetWidth: 100,
+      targetHeight: 100
       }).then((imageData) => {
         loading.dismiss();
         // imageData is a base64 encoded string
