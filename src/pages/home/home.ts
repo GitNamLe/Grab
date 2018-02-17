@@ -36,7 +36,7 @@ export class HomePage {
           // imageData is a base64 encoded string
           this.base64Image = "data:image/jpeg;base64," + imageData;
         }, (err) => {
-          loading.dismiss
+          loading.dismiss();
           const alert = this.alertCtrl.create({
             title: 'Signin Failed',
             message: err,
@@ -74,6 +74,12 @@ export class HomePage {
         "detectOrientation ": "true",
     };
 
+    // loading
+    const loading = this.loadingCtrl.create({
+      content: 'sending request'
+    });
+    loading.present();
+
     // Perform the REST API call.
     $.ajax({
         url: uriBase + "?" + $.param(params),
@@ -92,16 +98,25 @@ export class HomePage {
     })
 
     .done(function(data) {
+      loading.dismiss();
         // Show formatted JSON on webpage.
         $("#responseTextArea").val(JSON.stringify(data, null, 2));
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
+        loading.dismiss();
         // Display error message.
         var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
         errorString += (jqXHR.responseText === "") ? "" : (jQuery.parseJSON(jqXHR.responseText).message) ? 
             jQuery.parseJSON(jqXHR.responseText).message : jQuery.parseJSON(jqXHR.responseText).error.message;
-        alert(errorString);
+
+        const alert = this.alertCtrl.create({
+          title: 'Request Failed!',
+          message: errorString,
+          buttons: ['ok']
+        });
+        alert.present();
+
     });
 };
 
