@@ -95,6 +95,8 @@ export class HomePage {
 
     .fail(function(jqXHR, textStatus, errorThrown) {
         // Display error message.
+        this.results = "yafailed"
+
         var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
         errorString += (jqXHR.responseText === "") ? "" : (jQuery.parseJSON(jqXHR.responseText).message) ? 
             jQuery.parseJSON(jqXHR.responseText).message : jQuery.parseJSON(jqXHR.responseText).error.message;
