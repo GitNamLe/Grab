@@ -85,11 +85,15 @@ export class HomePage {
     .done(function(data) {
 
         loading.dismiss();
-        // Show formatted JSON on webpage.
+
+
         let load = this.loadingCtrl.create({
           content: data
         });
         load.present();
+        
+        // Show formatted JSON on webpage.
+        $("#responseTextArea").val(JSON.stringify(data, null, 2));
 
     })
 
