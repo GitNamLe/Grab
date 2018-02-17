@@ -20,6 +20,7 @@ export class HomePage {
   resData: any;
   boysWidth: number;
   boysHeight: number;
+  results: string;
   constructor(private camera: Camera,
               private imageService: ImageService,
               private loadingCtrl: LoadingController,
@@ -86,6 +87,7 @@ export class HomePage {
     })
 
     .done((data) => {
+      this.results = data.regions[0].lines[0].words[0].text;
       this.resData = data.regions[0].lines[0].words;
       // Show formatted JSON on webpage.
       /* $("#responseTextArea").val(JSON.stringify(data, null, 2)); */
