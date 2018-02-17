@@ -83,16 +83,14 @@ export class HomePage {
     })
 
     .done(function(data) {
-      loading.dismiss();
+
+        loading.dismiss();
         // Show formatted JSON on webpage.
-      loading.dismiss();
-      // Show formatted JSON on webpage.
-      const alert = this.alertCtrl.create({
-        title: 'Request Failed',
-        message: data,
-        buttons: ['ok']
-      });
-      alert.present();
+        let load = this.loadingCtrl.create({
+          content: data
+        });
+        load.present();
+
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
