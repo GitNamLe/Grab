@@ -121,7 +121,7 @@ export class HomePage {
         });
         alert.present();
 
-    });
-}; */
+    }); */
+};
 
 }
