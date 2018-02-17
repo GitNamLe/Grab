@@ -88,12 +88,13 @@ export class HomePage {
 
 
         let load = this.loadingCtrl.create({
-          content: data
+          content: data.regions[0].lines[0].words[1].text
         });
         load.present();
-        
+
         // Show formatted JSON on webpage.
-        $("#responseTextArea").val(JSON.stringify(data, null, 2));
+        
+        
 
     })
 
