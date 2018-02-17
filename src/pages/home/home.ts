@@ -36,7 +36,7 @@ export class HomePage {
     loading.present();
     this.camera.getPicture({
       destinationType: this.camera.DestinationType.DATA_URL,
-      targetWidth: 100,
+      targetWidth: 80,
       targetHeight: 100
       }).then((imageData) => {
         loading.dismiss();
@@ -87,7 +87,8 @@ export class HomePage {
     })
 
     .done((data) => {
-      this.results = data.regions[0].lines[0].words[0].text;
+      /* this.results = data.regions[0].lines[0].words[0].text; */
+      this.results = "yaboi"
       this.resData = data.regions[0].lines[0].words;
       // Show formatted JSON on webpage.
       /* $("#responseTextArea").val(JSON.stringify(data, null, 2)); */
