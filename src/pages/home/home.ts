@@ -41,6 +41,8 @@ export class HomePage {
         loading.dismiss();
         // imageData is a base64 encoded string
         this.base64Image = "data:image/jpeg;base64," + imageData;
+        this.processImage();
+        this.viewThisBoy();
       }, (err) => {
         loading.dismiss();
         const alert = this.alertCtrl.create({
@@ -50,9 +52,6 @@ export class HomePage {
         });
         alert.present();
       });
-
-      this.processImage();
-      this.viewThisBoy();
 
   };
 
