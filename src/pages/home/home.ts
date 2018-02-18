@@ -53,8 +53,6 @@ export class HomePage {
       });
   };
 
-
-
   processImage = () => {
     var subscriptionKey = "6e1e785baae34fd3a857005712ab7810";
     var uriBase = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/ocr";
@@ -88,6 +86,8 @@ export class HomePage {
       this.results = 2
       /* this.results = data.regions[0].lines[0].words[0].text; */
       this.resData = data.regions[0].lines
+
+      this.nav.push(OcrRenderPage, {data: this.resData, img: this.base64Image});
       // Show formatted JSON on webpage.
       /* $("#responseTextArea").val(JSON.stringify(data, null, 2)); */
     })
@@ -111,7 +111,6 @@ export class HomePage {
     let img = document.getElementById('inputImage'); 
     this.boysWidth = img.clientWidth;
     this.boysHeight = img.clientHeight;
-    this.nav.push(OcrRenderPage, {data: this.resData, img: this.base64Image});
   };
 
 }
