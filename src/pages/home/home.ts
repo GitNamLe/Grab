@@ -17,7 +17,7 @@ import { OcrRenderPage } from '../ocr-render/ocr-render';
 export class HomePage {
   public base64Image: string;
   resData: any;
-  toggleImg = false;
+  enableRead = false;
   constructor(private camera: Camera,
               private imageService: ImageService,
               private loadingCtrl: LoadingController,
@@ -39,7 +39,7 @@ export class HomePage {
         loading.dismiss();
         // imageData is a base64 encoded string
         this.base64Image = "data:image/jpeg;base64," + imageData;
-        this.toggleImg = true;
+        this.enableRead = true;
       }, (err) => {
         loading.dismiss();
         const alert = this.alertCtrl.create({

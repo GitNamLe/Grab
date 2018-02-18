@@ -7,7 +7,7 @@
 </ion-header>  
 
 <ion-content class="home">
-    <img [src]="base64Image" *ngIf="toggleImg" width="100%" height="100%"/>
+    <img [src]="base64Image" *ngIf="base64Image" width="100%" height="100%"/>
     <button ion-button primary id="read" (click)="processImage()" [disabled]="!enableRead">Read Text!</button>
 </ion-content>
 
