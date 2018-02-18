@@ -7,14 +7,12 @@
 </ion-header>  
 
 <ion-content class="home">
-  <button ion-button primary (click)="processImage()">Read image</button>
-  <button ion-button secondary (click)="viewThisBoy()">viewthisboi</button>
-
+    <img [src]="base64Image" *ngIf="toggleImg" width="100%" height="100%"/>
+    <button ion-button primary id="read" (click)="processImage()" [disabled]="!enableRead">Read Text!</button>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
       <div id="aperture" (click)="takePicture()"><ion-icon name="aperture"></ion-icon></div>
-      <button ion-button primary id="read" (click)="processImage()">Read Text!</button>
   </ion-toolbar>
 </ion-footer>

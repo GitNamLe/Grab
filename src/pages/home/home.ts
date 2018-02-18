@@ -105,9 +105,6 @@ export class HomePage {
         alert.present();
 
     });
-    let img = document.getElementById('inputImage'); 
-    this.boysWidth = img.clientWidth;
-    this.boysHeight = img.clientHeight;
   };
 
 }

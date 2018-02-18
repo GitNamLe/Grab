@@ -16,10 +16,13 @@ ion-icon {
     text-align: center;
 }
 
-.scroll-content {
-    overflow-y: hidden;
+#read {
+    position: absolute;
+    top: 90%;
+    left: 65%;
 }
 
-#read {
-    text-align: right;
+
+.scroll-content {
+    overflow-y: hidden;
 }
