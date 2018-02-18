@@ -7,39 +7,8 @@
 </ion-header>  
 
 <ion-content class="home">
-  <ion-card>
-    <ion-card-content>
-<!--       <h1>Optical Character Recognition (OCR):</h1>-->      
-    <button ion-button primary (click)="takePicture()">Take a Picture And Read Text</button>
-
-    <br><br>
-    <!--
-    Latest Picture:
-    <img [src]="base64Image" *ngIf="base64Image" width="400" />
-
-    <div id="wrapper" style="width:1020px; display:table;">
-        <div id="jsonOutput" style="width:600px; display:table-cell;">
-            Response:
-            <br><br>
-            <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px;"></textarea>
-            <textarea id="errorTextArea" class="UIInput" style="width:580px; height:400px;">{ }}</textarea>
-
-        </div>
-    </div> -->
-    <h1>Optical Character Recognition (OCR):</h1>
-    <br><br>
-<!--Image to read: <input type="text" [(ngModel)]="sourceImageUrl" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Atomist_quote_from_Democritus.png/338px-Atomist_quote_from_Democritus.png" /> -->
-   <button ion-button primary (click)="processImage()">Read image</button>
-    <button ion-button secondary (click)="viewThisBoy()">viewthisboi</button>
-    Source image:
-    <br><br>
-    <p>{{ boysWidth }}and{{ boysHeight }}</p>
-    <p>{{ results }}</p>
-    <img crossOrigin="Anonymous" id="inputImage" [src]="base64Image" *ngIf="base64Image" width="100" />
-
-    <br><br>
-    </ion-card-content>
-  </ion-card>
+  <button ion-button primary (click)="processImage()">Read image</button>
+  <button ion-button secondary (click)="viewThisBoy()">viewthisboi</button>
 
 </ion-content>
 
