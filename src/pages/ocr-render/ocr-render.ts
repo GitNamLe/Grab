@@ -56,11 +56,12 @@ export class OcrRenderPage {
         text: '"' + words + '"'
         , from: 'en'
         , to: 'es'
-    }
+    };
     this.client.translate(params, (err, data) => {
-        this.wordsArr = data.split(" ");
+        this.result = data;
     });
-  }
+  this.wordsArr = this.result.split(" ");
+}
 
   notify(){
     console.log("toggled: " + this.toggleImg)
