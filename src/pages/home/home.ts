@@ -90,7 +90,7 @@ export class HomePage {
     .done((data) => {
       this.results = 2
       /* this.results = data.regions[0].lines[0].words[0].text; */
-      this.resData = data.regions[0].lines[0].words
+      this.resData = data.regions[0].lines[0].words[0].text
       // Show formatted JSON on webpage.
       /* $("#responseTextArea").val(JSON.stringify(data, null, 2)); */
     })
