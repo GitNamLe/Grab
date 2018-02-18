@@ -47,14 +47,13 @@
     <div class="scattered2">{{ wordsArr[14] }}</div>
     <div class="dream2">{{ wordsArr[15] }}</div>
   </div>
+
+  <button ion-button danger id="stay" (click)="getES()">Call ES</button>
 </ion-content>
   
 
 <ion-footer>
   <ion-toolbar>
-    <ion-item>
-        <button ion-button danger id="stay" (click)="getES()">Call ES</button>
-    </ion-item>
     <ion-item>
         <ion-label>Toggle Picture</ion-label>
         <ion-toggle [(ngModel)]="toggleImg" (ionChange)="notify()"></ion-toggle>
