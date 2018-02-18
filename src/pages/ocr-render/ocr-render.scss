@@ -38,3 +38,45 @@ page-ocr-render {
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+
+// dont look back you're not going that way
+
+.ex2 .dont {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+}.ex2 .look {
+    position: absolute;
+    top: 10%;
+    left: 60%;
+}.ex2 .back {
+    position: absolute;
+    top: 25%;
+    left: 60%;
+}.ex2 .youre {
+    position: absolute;
+    top: 40%;
+    left: 60%;
+}.ex2 .not {
+    position: absolute;
+    top: 550%;
+    left: 20%;
+}.ex2 .going {
+    position: absolute;
+    top: 55%;
+    left: 60%;
+}.ex2 .that {
+    position: absolute;
+    top: 70%;
+    left: 20%;
+}.ex2 .way {
+    position: absolute;
+    top: 70%;
+    left: 60%;
+}
+
+.ex1 div {
+    font-size: 25px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}

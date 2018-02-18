@@ -16,7 +16,6 @@ import { OcrRenderPage } from '../ocr-render/ocr-render';
 })
 export class HomePage {
   public base64Image: string;
-  blob: any;
   resData: any;
   boysWidth: number;
   boysHeight: number;
@@ -90,7 +89,7 @@ export class HomePage {
     .done((data) => {
       this.results = 2
       /* this.results = data.regions[0].lines[0].words[0].text; */
-      this.resData = data.regions[0].lines[0].words[0].text
+      this.resData = data.regions[0].lines[0]
       // Show formatted JSON on webpage.
       /* $("#responseTextArea").val(JSON.stringify(data, null, 2)); */
     })
