@@ -51,6 +51,9 @@ export class HomePage {
         alert.present();
       });
 
+      this.processImage();
+      this.viewThisBoy();
+
   };
 
   viewThisBoy(){
