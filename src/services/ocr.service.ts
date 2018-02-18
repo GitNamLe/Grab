@@ -1,5 +1,23 @@
+import * as MsTranslator from 'mstranslator';
 
 export class ImageService {
+    client = new MsTranslator({
+        api_key: "ff8a23977cc846d8bfcca73c6b5f06c0"
+    }, true);
+
+    getES(wordsArr){
+        let words =  wordsArr.join(" ");
+        let params = {
+            text: '"' + words + '"'
+            , from: 'en'
+            , to: 'es'
+        }
+        let result = "hello wah"
+        this.client.translate(params, function(err, data) {
+            result = data;
+        });
+        return result
+    }
 
     getBase64Image(img) {
         var canvas = document.createElement("canvas");

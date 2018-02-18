@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ImageService } from '../../services/ocr.service';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class OcrRenderPage {
 
 
   constructor(public navCtrl: NavController, 
-              public navParams: NavParams,) {
+              public navParams: NavParams,
+              private imageService: ImageService) {
   }
 
   ngOnInit() {
@@ -42,6 +44,11 @@ export class OcrRenderPage {
     }
 
 
+  }
+
+  EScall(){
+    /* this.wordsArr = this.imageService.getES(this.wordsArr) */
+    this.wordsArr = this.imageService.getES(this.wordsArr).split(" ");
   }
 
   notify(){
