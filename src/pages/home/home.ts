@@ -111,7 +111,6 @@ export class HomePage {
 
     });
     let img = document.getElementById('inputImage'); 
-    this.results = document.getElementById('inputImage');
     this.boysWidth = img.clientWidth;
     this.boysHeight = img.clientHeight;
 
