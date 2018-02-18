@@ -1,3 +1,40 @@
 page-ocr-render {
 
 }
+
+//    Dont tell people your dreams show them.
+.ex1 .dont {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}.ex1 .tell {
+    position: absolute;
+    top: 20%;
+    left: 60%;
+}.ex1 .people {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+}.ex1 .your {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+}.ex1 .dreams {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+}.ex1 .show {
+    position: absolute;
+    top: 60%;
+    left: 20%;
+}.ex1 .them {
+    position: absolute;
+    top: 70%;
+    left: 20%;
+}
+
+.ex1 div {
+    font-size: 25px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}

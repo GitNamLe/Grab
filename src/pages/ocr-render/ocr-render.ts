@@ -10,6 +10,7 @@ export class OcrRenderPage {
   data: any;
   img: any;
   respond: string;
+  wordsArr = [];
   toggleImg: boolean = true;
 
 
@@ -23,10 +24,16 @@ export class OcrRenderPage {
     this.data = this.navParams.get('data');
     this.img = this.navParams.get('img');
 
+    this.data.map((row) => {
+      row.words.map((word) => { this.wordsArr.push(word.text) })
+    })
+
+    console.log(this.wordsArr);
+
   }
 
   notify(){
     console.log("toggled: " + this.toggleImg)
   }
-  
+
 }
