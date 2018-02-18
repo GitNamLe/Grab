@@ -12,7 +12,9 @@ export class OcrRenderPage {
   respond: string;
   wordsArr = [];
   toggleImg: boolean = true;
-  words
+  viewEx1 = false;
+  viewEx2 = false;
+  viewEx3 = false;
 
 
   constructor(public navCtrl: NavController, 
@@ -29,7 +31,17 @@ export class OcrRenderPage {
       row.words.map((word) => { this.wordsArr.push(word.text) })
     })
 
-    this.words = this.wordsArr.join(' ');
+    if(this.wordsArr[0] === "You"){
+      this.viewEx1 = true;
+    }
+    if(this.wordsArr[0] === "Please"){
+      this.viewEx2 = true;
+    }
+    if(this.wordsArr[0] === "A"){
+      this.viewEx3 = true;
+    }
+
+
   }
 
   notify(){

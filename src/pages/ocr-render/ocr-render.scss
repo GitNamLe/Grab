@@ -2,35 +2,47 @@ page-ocr-render {
 
 }
 
-//    Dont tell people your dreams show them.
-.ex1 .dont {
+//  You, me, nobody is gonna hit as hard as life
+.ex1 .you {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+}.ex1 .me {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+}.ex1 .nobody {
+    position: absolute;
+    top: 10%;
+    left: 60%;
+}.ex1 .is {
     position: absolute;
     top: 20%;
     left: 20%;
-}.ex1 .tell {
+}.ex1 .gonna {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+}.ex1 .hit {
     position: absolute;
     top: 20%;
     left: 60%;
-}.ex1 .people {
+}.ex1 .as {
     position: absolute;
-    top: 30%;
-    left: 20%;
-}.ex1 .your {
+    top: 20%;
+    left: 80%;
+}.ex1 .hard {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 20%;
-}.ex1 .dreams {
+}.ex1 .as2 {
     position: absolute;
-    top: 50%;
-    left: 20%;
-}.ex1 .show {
+    top: 35%;
+    left: 40%;
+}.ex1 .life {
     position: absolute;
-    top: 60%;
-    left: 20%;
-}.ex1 .them {
-    position: absolute;
-    top: 70%;
-    left: 20%;
+    top: 35%;
+    left: 65%;
 }
 
 .ex1 div {
@@ -39,43 +51,129 @@ page-ocr-render {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-// dont look back you're not going that way
+//   Please use the wireless Lavalier Microphone when you present. Thank you!
 
-.ex2 .dont {
+.ex2 .please {
     position: absolute;
-    top: 10%;
-    left: 20%;
-}.ex2 .look {
+    top: 20%;
+    left: 10%;
+}.ex2 .use {
     position: absolute;
-    top: 10%;
+    top: 20%;
     left: 60%;
-}.ex2 .back {
+}.ex2 .the {
     position: absolute;
-    top: 25%;
-    left: 60%;
-}.ex2 .youre {
+    top: 20%;
+    left: 80%;
+}.ex2 .wireless {
     position: absolute;
     top: 40%;
-    left: 60%;
-}.ex2 .not {
+    left: 10%;
+}.ex2 .lavalier {
     position: absolute;
-    top: 55%;
-    left: 20%;
-}.ex2 .going {
+    top: 40%;
+    left: 50%;
+}.ex2 .microphone {
     position: absolute;
-    top: 55%;
-    left: 60%;
-}.ex2 .that {
+    top: 60%;
+    left: 10%;
+}.ex2 .when {
     position: absolute;
-    top: 70%;
-    left: 20%;
-}.ex2 .way {
+    top: 60%;
+    left: 80%;
+}.ex2 .you {
     position: absolute;
-    top: 70%;
-    left: 60%;
+    top: 80%;
+    left: 10%;
+}.ex2 .present {
+    position: absolute;
+    top: 80%;
+    left: 30%;
+}.ex2 .thank {
+    position: absolute;
+    top: 90%;
+    left: 10%;
+}.ex2 .you2 {
+    position: absolute;
+    top: 90%;
+    left: 55%;
 }
 
 .ex2 div {
+    font-size: 25px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+//  A scattered dream that's like a far-off memory a far-off memory that's like a scattered dream
+
+.ex3 .a {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}.ex3 .scattered {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+}.ex3 .dream {
+    position: absolute;
+    top: 10%;
+    left: 80%;
+}.ex3 .thats {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}.ex3 .like {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+}.ex3 .a {
+    position: absolute;
+    top: 20%;
+    left: 60%;
+}.ex3 .far-off {
+    position: absolute;
+    top: 20%;
+    left: 90%;
+}.ex3 .memory {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}.ex3 .a {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+}.ex3 .far-off2 {
+    position: absolute;
+    top: 30%;
+    left: 60%;
+}.ex3 .memory2 {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}.ex3 .thats2 {
+    position: absolute;
+    top: 40%;
+    left: 55%;
+}.ex3 .like2 {
+    position: absolute;
+    top: 40%;
+    left: 80%;
+}.ex3 .a2 {
+    position: absolute;
+    top: 40%;
+    left: 95%;
+}.ex3 .scattered2 {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+}.ex3 .dream2 {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+}
+
+.ex3 div {
     font-size: 25px;
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
