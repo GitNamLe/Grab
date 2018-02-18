@@ -31,7 +31,7 @@ export class OcrRenderPage {
       row.words.map((word) => { this.wordsArr.push(word.text) })
     })
 
-    if(this.wordsArr[0] === "You"){
+    if(this.wordsArr[0] === "You,"){
       this.viewEx1 = true;
     }
     if(this.wordsArr[0] === "Please"){
