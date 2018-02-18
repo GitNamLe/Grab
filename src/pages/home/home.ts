@@ -41,7 +41,6 @@ export class HomePage {
         loading.dismiss();
         // imageData is a base64 encoded string
         this.base64Image = "data:image/jpeg;base64," + imageData;
-        this.processImage()
       }, (err) => {
         loading.dismiss();
         const alert = this.alertCtrl.create({
@@ -83,7 +82,6 @@ export class HomePage {
     })
 
     .done((data) => {
-      this.results = 2
       /* this.results = data.regions[0].lines[0].words[0].text; */
       this.resData = data.regions[0].lines
 
