@@ -52,7 +52,6 @@ export class HomePage {
         alert.present();
       });
 
-        this.blob = this.imageService.makeBlob(this.base64Image);
   };
 
   viewThisBoy(){
@@ -69,6 +68,8 @@ export class HomePage {
         "detectOrientation ": "true",
     };
 
+    let imgBlob = this.imageService.makeBlob(this.base64Image);
+
     // Perform the REST API call.
     $.ajax({
         url: uriBase + "?" + $.param(params),
@@ -82,7 +83,7 @@ export class HomePage {
         type: "POST",
 
         // Request body.
-        data: this.blob,
+        data: imgBlob,
         processData: false
     })
 
