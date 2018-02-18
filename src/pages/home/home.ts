@@ -53,9 +53,7 @@ export class HomePage {
       });
   };
 
-  viewThisBoy(){
-    this.nav.push(OcrRenderPage, {data: this.resData, img: this.base64Image});
-  }
+
 
   processImage = () => {
     var subscriptionKey = "6e1e785baae34fd3a857005712ab7810";
@@ -113,7 +111,7 @@ export class HomePage {
     let img = document.getElementById('inputImage'); 
     this.boysWidth = img.clientWidth;
     this.boysHeight = img.clientHeight;
-    this.viewThisBoy();
+    this.nav.push(OcrRenderPage, {data: this.resData, img: this.base64Image});
   };
 
 }
