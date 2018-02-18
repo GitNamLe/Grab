@@ -56,7 +56,7 @@ export class HomePage {
   };
 
   viewThisBoy(){
-    this.nav.push(OcrRenderPage, {data: this.resData});
+    this.nav.push(OcrRenderPage, {data: this.resData, img: this.base64Image});
   }
 
   processImage = () => {

@@ -8,7 +8,10 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class OcrRenderPage {
   data: any;
+  img: any;
   respond: string;
+  toggleImg: boolean = true;
+
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,) {
@@ -18,9 +21,12 @@ export class OcrRenderPage {
     /* this.recipe = this.navParams.get('recipe');
     this.index = this.navParams.get('index'); */
     this.data = this.navParams.get('data');
-    if(this.data){
-      this.respond = "we in";
-    }
+    this.img = this.navParams.get('img');
+
   }
 
+  notify(){
+    console.log("toggled: " + this.toggleImg)
+  }
+  
 }
