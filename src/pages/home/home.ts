@@ -20,7 +20,7 @@ export class HomePage {
   resData: any;
   boysWidth: number;
   boysHeight: number;
-  results: number;
+  results: any;
   constructor(private camera: Camera,
               private imageService: ImageService,
               private loadingCtrl: LoadingController,
@@ -111,6 +111,7 @@ export class HomePage {
 
     });
     let img = document.getElementById('inputImage'); 
+    this.results = document.getElementById('inputImage');
     this.boysWidth = img.clientWidth;
     this.boysHeight = img.clientHeight;
 
