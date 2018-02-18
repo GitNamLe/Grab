@@ -12,6 +12,7 @@ export class OcrRenderPage {
   respond: string;
   wordsArr = [];
   toggleImg: boolean = true;
+  words
 
 
   constructor(public navCtrl: NavController, 
@@ -28,8 +29,7 @@ export class OcrRenderPage {
       row.words.map((word) => { this.wordsArr.push(word.text) })
     })
 
-    console.log(this.wordsArr);
-
+    this.words = this.wordsArr.join(' ');
   }
 
   notify(){
