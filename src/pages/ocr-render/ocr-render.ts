@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ImageService } from '../../services/ocr.service';
 
+import * as MsTranslator from 'mstranslator';
 
 @Component({
   selector: 'page-ocr-render',
@@ -16,6 +17,11 @@ export class OcrRenderPage {
   viewEx1 = false;
   viewEx2 = false;
   viewEx3 = false;
+  // translator api
+  result = "hello wah";
+  client = new MsTranslator({
+      api_key: "ff8a23977cc846d8bfcca73c6b5f06c0"
+  }, true);
 
 
   constructor(public navCtrl: NavController, 
@@ -42,13 +48,18 @@ export class OcrRenderPage {
     if(this.wordsArr[0] === "A"){
       this.viewEx3 = true;
     }
-
-
   }
 
-  EScall(){
-    /* this.wordsArr = this.imageService.getES(this.wordsArr) */
-    this.wordsArr = this.imageService.getES(this.wordsArr).split(" ");
+  getES(){
+    let words =  this.wordsArr.join(" ");
+    let params = {
+        text: '"' + words + '"'
+        , from: 'en'
+        , to: 'es'
+    }
+    this.client.translate(params, (err, data) => {
+        this.wordsArr = data.split(" ");
+    });
   }
 
   notify(){
