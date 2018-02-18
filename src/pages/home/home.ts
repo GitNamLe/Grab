@@ -51,8 +51,6 @@ export class HomePage {
         });
         alert.present();
       });
-      this.viewThisBoy();
-
   };
 
   viewThisBoy(){
@@ -115,10 +113,7 @@ export class HomePage {
     let img = document.getElementById('inputImage'); 
     this.boysWidth = img.clientWidth;
     this.boysHeight = img.clientHeight;
-
-    this.nav.push(OcrRenderPage, {data: this.resData, img: this.base64Image});
-
-
+    this.viewThisBoy();
   };
 
 }
